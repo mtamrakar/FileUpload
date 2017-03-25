@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using FileUpload.Formatter;
 using System.Web.Http;
 
 namespace FileUpload
@@ -10,6 +8,7 @@ namespace FileUpload
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+            GlobalConfiguration.Configuration.Formatters.Add(new DocumentFormatter());
 
             // Web API routes
             config.MapHttpAttributeRoutes();
