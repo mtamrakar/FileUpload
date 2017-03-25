@@ -8,7 +8,19 @@ namespace FileUpload.Controllers
         [Route("upload")]
         public IHttpActionResult Upload(Document document)
         {
-            
+            var files = document.Content;
+
+            foreach(var file in files)
+            {
+                //This gives you file as byte[] 
+                var bytes = file.ReadAsByteArrayAsync().Result;
+
+                //This gives you file as byte[] 
+                //var stream = file.ReadAsStreamAsync().Result;
+
+                //This gives you file as byte[] 
+                //var string = file.ReadAsStringAsync().Result;
+            }
             return Created("", "");
         }
 
